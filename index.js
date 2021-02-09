@@ -33,12 +33,12 @@ inquirer.prompt([
   {
     type: 'input',
     message: "What command should be run to install dependencies?",
-    name: 'installDependencies'
+    name: 'dependencies'
   },
   {
     type: 'input',
     message: "What command should be run to run tests?",
-    name: 'runTests',
+    name: 'npmTests',
     default: 'npm test'
   },
   {
@@ -46,4 +46,49 @@ inquirer.prompt([
     message: "What does the user need to know about using the repo?",
     name: 'usage'
   },
-])
+]).then(response => {
+  const content = `
+  # ${response.title}
+  
+  ## Table of Contents
+
+* [Installation](#installation)
+* [Usage](#Usage)
+* [Contributions](#Contributions)
+* [Tests](#Tests)
+* [License](#License)
+* [Questions](#Questions)
+
+
+## Installation
+
+To install the proper dependencies, please use the following command:
+\`\`\`
+${response.dependencies}
+\`\`\`
+
+## Usage
+
+${data.usage}
+
+## Tests
+
+\`\`\`
+${response.npmTests}
+\`\`\`
+
+## License
+
+This application is protected by the ${response.license} license. 
+
+## Questions
+
+For any questions relating to this application, please reach out to me at the following:
+Email: ${response.email}
+
+Github: [${response.username}](github.com/${response.username})
+`
+
+
+}
+)
