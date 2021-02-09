@@ -33,13 +33,14 @@ inquirer.prompt([
   {
     type: 'input',
     message: "What command should be run to install dependencies?",
-    name: 'dependencies'
+    name: 'dependencies',
+    default: 'npm i'
   },
   {
     type: 'input',
-    message: "What command should be run to run tests?",
-    name: 'npmTests',
-    default: 'npm test'
+    message: "What command should be run to use application?",
+    name: 'run',
+    default: 'node index.js'
   },
   {
     type: 'input',
@@ -49,6 +50,10 @@ inquirer.prompt([
 ]).then(response => {
   const content = `
 # ${response.title}
+
+## Description
+
+${response.description}
   
 ## Table of Contents
 
@@ -71,22 +76,23 @@ ${response.dependencies}
 
 ${response.usage}
 
-## Tests
+## Run
 
 \`\`\`
-${response.npmTests}
+${response.run}
 \`\`\`
 
-### Image of code to application
-![screenshot](./Images/readmeGen.png)
+### screenshots
+![screenshot](Screenshot/terminal.png)
+![screenshot](Screenshot/readme.png)
 
 ## License
 
 This application is protected by the ${response.license} license. 
 
-## Questions
+## Contact
 
-For any questions relating to this application, please reach out to me at the following:
+For any questions, please reach out to me at the following:
 Email: ${response.email}
 
 Github: [${response.username}](github.com/${response.username})

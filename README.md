@@ -1,14 +1,18 @@
 
 # README-GENERATOR
+
+## Description
+
+This application helps the user generate a high quality ReadMe file to use and upload to their repositories 
   
 ## Table of Contents
 
 * [Installation](#installation)
 * [Usage](#Usage)
-* [Contributions](#Contributions)
-* [Tests](#Tests)
+* [Run](#Run)
+* [screenshots](#screenshots)
 * [License](#License)
-* [Questions](#Questions)
+* [Contact](#Contact)
 
 
 ## Installation
@@ -20,24 +24,25 @@ npm i
 
 ## Usage
 
-Before using this application, please make sure to install the inquirer package 
+Before using this application, please make sure to install the inquirer package to use the application
 
-## Tests
+## Run
 
 ```
-npm test
+node index.js
 ```
 
-### Image of code to application
-![screenshot](./Images/readmeGen.png)
+### screenshots
+![screenshot](Screenshot/terminal.png)
+![screenshot](Screenshot/readme.png)
 
 ## License
 
 This application is protected by the Apache 2.0 license. 
 
-## Questions
+## Contact
 
-For any questions relating to this application, please reach out to me at the following:
+For any questions, please reach out to me at the following:
 Email: tbtarek@gmail.com
 
-Github: [Tarekbe55](github.com/Tarekbe55)
+Github: [https://github.com/Tarekbe55](github.com/https://github.com/Tarekbe55)
