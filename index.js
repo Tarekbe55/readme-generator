@@ -48,9 +48,9 @@ inquirer.prompt([
   },
 ]).then(response => {
   const content = `
-  # ${response.title}
+# ${response.title}
   
-  ## Table of Contents
+## Table of Contents
 
 * [Installation](#installation)
 * [Usage](#Usage)
@@ -69,13 +69,16 @@ ${response.dependencies}
 
 ## Usage
 
-${data.usage}
+${response.usage}
 
 ## Tests
 
 \`\`\`
 ${response.npmTests}
 \`\`\`
+
+### Image of code to application
+![screenshot](./Images/readmeGen.png)
 
 ## License
 
@@ -88,7 +91,8 @@ Email: ${response.email}
 
 Github: [${response.username}](github.com/${response.username})
 `
-
+  fs.writeFile('README.md', content, (err) =>
+    err ? console.error(err) : console.log('Finished!'))
 
 }
 )
